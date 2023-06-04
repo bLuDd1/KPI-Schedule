@@ -16,6 +16,7 @@
 		13B27BF72A2B99ED002DCA96 /* KPI_ScheduleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27BF62A2B99ED002DCA96 /* KPI_ScheduleTests.swift */; };
 		13B27C012A2B99ED002DCA96 /* KPI_ScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27C002A2B99ED002DCA96 /* KPI_ScheduleUITests.swift */; };
 		13B27C032A2B99ED002DCA96 /* KPI_ScheduleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27C022A2B99ED002DCA96 /* KPI_ScheduleUITestsLaunchTests.swift */; };
+		13B27C112A2D0B56002DCA96 /* GroupSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27C102A2D0B56002DCA96 /* GroupSearchController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		13B27BFC2A2B99ED002DCA96 /* KPI-ScheduleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KPI-ScheduleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B27C002A2B99ED002DCA96 /* KPI_ScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPI_ScheduleUITests.swift; sourceTree = "<group>"; };
 		13B27C022A2B99ED002DCA96 /* KPI_ScheduleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPI_ScheduleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		13B27C102A2D0B56002DCA96 /* GroupSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,7 @@
 			children = (
 				13B27BDF2A2B99EC002DCA96 /* AppDelegate.swift */,
 				13B27BE12A2B99EC002DCA96 /* SceneDelegate.swift */,
-				13B27BE32A2B99EC002DCA96 /* ViewController.swift */,
+				13B27C0F2A2D05F1002DCA96 /* Controller */,
 				13B27BE52A2B99EC002DCA96 /* Main.storyboard */,
 				13B27BE82A2B99ED002DCA96 /* Assets.xcassets */,
 				13B27BEA2A2B99ED002DCA96 /* LaunchScreen.storyboard */,
@@ -125,6 +127,15 @@
 				13B27C022A2B99ED002DCA96 /* KPI_ScheduleUITestsLaunchTests.swift */,
 			);
 			path = "KPI-ScheduleUITests";
+			sourceTree = "<group>";
+		};
+		13B27C0F2A2D05F1002DCA96 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				13B27BE32A2B99EC002DCA96 /* ViewController.swift */,
+				13B27C102A2D0B56002DCA96 /* GroupSearchController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B27BE42A2B99EC002DCA96 /* ViewController.swift in Sources */,
+				13B27C112A2D0B56002DCA96 /* GroupSearchController.swift in Sources */,
 				13B27BE02A2B99EC002DCA96 /* AppDelegate.swift in Sources */,
 				13B27BE22A2B99EC002DCA96 /* SceneDelegate.swift in Sources */,
 			);
