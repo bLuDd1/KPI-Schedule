@@ -17,6 +17,8 @@
 		13B27C012A2B99ED002DCA96 /* KPI_ScheduleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27C002A2B99ED002DCA96 /* KPI_ScheduleUITests.swift */; };
 		13B27C032A2B99ED002DCA96 /* KPI_ScheduleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27C022A2B99ED002DCA96 /* KPI_ScheduleUITestsLaunchTests.swift */; };
 		13B27C112A2D0B56002DCA96 /* GroupSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27C102A2D0B56002DCA96 /* GroupSearchController.swift */; };
+		13B27C142A2D2EB4002DCA96 /* GroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27C132A2D2EB4002DCA96 /* GroupManager.swift */; };
+		13B27C172A2D304C002DCA96 /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27C162A2D304C002DCA96 /* GroupModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		13B27C002A2B99ED002DCA96 /* KPI_ScheduleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPI_ScheduleUITests.swift; sourceTree = "<group>"; };
 		13B27C022A2B99ED002DCA96 /* KPI_ScheduleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPI_ScheduleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		13B27C102A2D0B56002DCA96 /* GroupSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSearchController.swift; sourceTree = "<group>"; };
+		13B27C132A2D2EB4002DCA96 /* GroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupManager.swift; sourceTree = "<group>"; };
+		13B27C162A2D304C002DCA96 /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 		13B27BD32A2B99EC002DCA96 = {
 			isa = PBXGroup;
 			children = (
+				13B27C152A2D3038002DCA96 /* Model */,
+				13B27C122A2D2E5E002DCA96 /* Managers */,
 				13B27BDE2A2B99EC002DCA96 /* KPI-Schedule */,
 				13B27BF52A2B99ED002DCA96 /* KPI-ScheduleTests */,
 				13B27BFF2A2B99ED002DCA96 /* KPI-ScheduleUITests */,
@@ -136,6 +142,22 @@
 				13B27C102A2D0B56002DCA96 /* GroupSearchController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		13B27C122A2D2E5E002DCA96 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				13B27C132A2D2EB4002DCA96 /* GroupManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		13B27C152A2D3038002DCA96 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13B27C162A2D304C002DCA96 /* GroupModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +295,8 @@
 				13B27C112A2D0B56002DCA96 /* GroupSearchController.swift in Sources */,
 				13B27BE02A2B99EC002DCA96 /* AppDelegate.swift in Sources */,
 				13B27BE22A2B99EC002DCA96 /* SceneDelegate.swift in Sources */,
+				13B27C142A2D2EB4002DCA96 /* GroupManager.swift in Sources */,
+				13B27C172A2D304C002DCA96 /* GroupModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
