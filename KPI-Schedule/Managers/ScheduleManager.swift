@@ -7,11 +7,19 @@ protocol ScheduleManagerDelegate {
 
 struct ScheduleManager {
     var delegate: ScheduleManagerDelegate?
+
     
-    func performRequest(id: String) {
-        let scheduleURL = URL(string: "https://schedule.kpi.ua/api/schedule/lessons?groupId=" + id)
+    func getSchedule(id: String) {
+        let scheduleURL = "https://schedule.kpi.ua/api/schedule/lessons?groupId=\(id)"
+        if let safeUrlString = scheduleURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            performRequest(with: safeUrlString)
+        }
+    }
+    
+    func performRequest(with scheduleURL: String) {
+
         
-        if let url = scheduleURL {
+        if let url = URL(string: scheduleURL) {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let error = error {
                     print("Error getting schedule - \(error.localizedDescription)")

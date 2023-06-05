@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		136E43D62A2E2E5A0026125E /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136E43D52A2E2E5A0026125E /* ScheduleModel.swift */; };
 		136E43D82A2E320F0026125E /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136E43D72A2E320F0026125E /* ScheduleManager.swift */; };
+		136E43DA2A2E455D0026125E /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136E43D92A2E455D0026125E /* ScheduleController.swift */; };
 		13B27BE02A2B99EC002DCA96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27BDF2A2B99EC002DCA96 /* AppDelegate.swift */; };
 		13B27BE22A2B99EC002DCA96 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27BE12A2B99EC002DCA96 /* SceneDelegate.swift */; };
 		13B27BE72A2B99EC002DCA96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B27BE52A2B99EC002DCA96 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		136E43D52A2E2E5A0026125E /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
 		136E43D72A2E320F0026125E /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
+		136E43D92A2E455D0026125E /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
 		13B27BDC2A2B99EC002DCA96 /* KPI-Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KPI-Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B27BDF2A2B99EC002DCA96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13B27BE12A2B99EC002DCA96 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				13B27C102A2D0B56002DCA96 /* GroupSearchController.swift */,
+				136E43D92A2E455D0026125E /* ScheduleController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				13B27C112A2D0B56002DCA96 /* GroupSearchController.swift in Sources */,
 				136E43D82A2E320F0026125E /* ScheduleManager.swift in Sources */,
 				13B27BE02A2B99EC002DCA96 /* AppDelegate.swift in Sources */,
+				136E43DA2A2E455D0026125E /* ScheduleController.swift in Sources */,
 				13B27BE22A2B99EC002DCA96 /* SceneDelegate.swift in Sources */,
 				13B27C142A2D2EB4002DCA96 /* GroupManager.swift in Sources */,
 				13B27C172A2D304C002DCA96 /* GroupModel.swift in Sources */,
