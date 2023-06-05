@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		136E43D62A2E2E5A0026125E /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136E43D52A2E2E5A0026125E /* ScheduleModel.swift */; };
+		136E43D82A2E320F0026125E /* ScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136E43D72A2E320F0026125E /* ScheduleManager.swift */; };
 		13B27BE02A2B99EC002DCA96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27BDF2A2B99EC002DCA96 /* AppDelegate.swift */; };
 		13B27BE22A2B99EC002DCA96 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27BE12A2B99EC002DCA96 /* SceneDelegate.swift */; };
-		13B27BE42A2B99EC002DCA96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B27BE32A2B99EC002DCA96 /* ViewController.swift */; };
 		13B27BE72A2B99EC002DCA96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B27BE52A2B99EC002DCA96 /* Main.storyboard */; };
 		13B27BE92A2B99ED002DCA96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B27BE82A2B99ED002DCA96 /* Assets.xcassets */; };
 		13B27BEC2A2B99ED002DCA96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13B27BEA2A2B99ED002DCA96 /* LaunchScreen.storyboard */; };
@@ -39,10 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		136E43D52A2E2E5A0026125E /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		136E43D72A2E320F0026125E /* ScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManager.swift; sourceTree = "<group>"; };
 		13B27BDC2A2B99EC002DCA96 /* KPI-Schedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KPI-Schedule.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B27BDF2A2B99EC002DCA96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13B27BE12A2B99EC002DCA96 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		13B27BE32A2B99EC002DCA96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		13B27BE62A2B99EC002DCA96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13B27BE82A2B99ED002DCA96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13B27BEB2A2B99ED002DCA96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,8 +87,6 @@
 		13B27BD32A2B99EC002DCA96 = {
 			isa = PBXGroup;
 			children = (
-				13B27C152A2D3038002DCA96 /* Model */,
-				13B27C122A2D2E5E002DCA96 /* Managers */,
 				13B27BDE2A2B99EC002DCA96 /* KPI-Schedule */,
 				13B27BF52A2B99ED002DCA96 /* KPI-ScheduleTests */,
 				13B27BFF2A2B99ED002DCA96 /* KPI-ScheduleUITests */,
@@ -107,6 +107,8 @@
 		13B27BDE2A2B99EC002DCA96 /* KPI-Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				13B27C122A2D2E5E002DCA96 /* Managers */,
+				13B27C152A2D3038002DCA96 /* Model */,
 				13B27BDF2A2B99EC002DCA96 /* AppDelegate.swift */,
 				13B27BE12A2B99EC002DCA96 /* SceneDelegate.swift */,
 				13B27C0F2A2D05F1002DCA96 /* Controller */,
@@ -138,7 +140,6 @@
 		13B27C0F2A2D05F1002DCA96 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				13B27BE32A2B99EC002DCA96 /* ViewController.swift */,
 				13B27C102A2D0B56002DCA96 /* GroupSearchController.swift */,
 			);
 			path = Controller;
@@ -148,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				13B27C132A2D2EB4002DCA96 /* GroupManager.swift */,
+				136E43D72A2E320F0026125E /* ScheduleManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				13B27C162A2D304C002DCA96 /* GroupModel.swift */,
+				136E43D52A2E2E5A0026125E /* ScheduleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,8 +294,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B27BE42A2B99EC002DCA96 /* ViewController.swift in Sources */,
+				136E43D62A2E2E5A0026125E /* ScheduleModel.swift in Sources */,
 				13B27C112A2D0B56002DCA96 /* GroupSearchController.swift in Sources */,
+				136E43D82A2E320F0026125E /* ScheduleManager.swift in Sources */,
 				13B27BE02A2B99EC002DCA96 /* AppDelegate.swift in Sources */,
 				13B27BE22A2B99EC002DCA96 /* SceneDelegate.swift in Sources */,
 				13B27C142A2D2EB4002DCA96 /* GroupManager.swift in Sources */,
