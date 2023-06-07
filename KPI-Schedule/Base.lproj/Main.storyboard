@@ -125,7 +125,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="person.fill.questionmark" catalog="system" id="0dg-r4-JK8">
                             <connections>
-                                <segue destination="XlF-xs-nDF" kind="presentation" id="9Ho-Ys-SvU"/>
+                                <segue destination="XlF-xs-nDF" kind="presentation" destinationCreationSelector="unwindToViewController:sender:" id="9Ho-Ys-SvU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

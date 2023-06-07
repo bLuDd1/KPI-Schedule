@@ -25,8 +25,9 @@ class ScheduleController: UITableViewController {
         DispatchQueue.main.async {
         self.tableView.reloadData()
         }
-}
+    }
 
+    
 }
 
 extension ScheduleController: ScheduleManagerDelegate {
