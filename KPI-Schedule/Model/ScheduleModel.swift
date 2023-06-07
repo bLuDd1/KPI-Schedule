@@ -1,20 +1,20 @@
 import Foundation
 
-struct ScheduleData: Codable {
+struct ScheduleData: Decodable {
     var data: Schedule
 }
 
-struct Schedule: Codable {
+struct Schedule: Decodable {
     var scheduleFirstWeek: [Day]
     var scheduleSecondWeek: [Day]
 }
 
-struct Day: Codable {
+struct Day: Decodable {
     var day: String
     var pair: [Pair]
 }
 
-struct Pair: Codable {
+struct Pair: Decodable {
     var teacherName: String
     var lecturerId: String
     var type: String
@@ -24,7 +24,7 @@ struct Pair: Codable {
     var tag: String
 }
 
-enum DayName: String, Codable {
+enum DayName: String, Decodable {
     case monday = "Пн"
     case tuesday = "Вв"
     case wednesday = "Ср"
