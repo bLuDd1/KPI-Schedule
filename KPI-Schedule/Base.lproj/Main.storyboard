@@ -123,7 +123,11 @@
                                 </connections>
                             </segmentedControl>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="person.fill.questionmark" catalog="system" id="0dg-r4-JK8"/>
+                        <barButtonItem key="rightBarButtonItem" image="person.fill.questionmark" catalog="system" id="0dg-r4-JK8">
+                            <connections>
+                                <segue destination="XlF-xs-nDF" kind="presentation" id="9Ho-Ys-SvU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -176,6 +180,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LmT-UY-lwT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="295" y="-642"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="tMo-bS-Spa">
+            <objects>
+                <tableViewController id="mbZ-Js-UFB" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Prf-Ps-xXr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wFm-3E-Yhj">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wFm-3E-Yhj" id="jcv-2q-Fwc">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mbZ-Js-UFB" id="loZ-h6-BRm"/>
+                            <outlet property="delegate" destination="mbZ-Js-UFB" id="lhi-8s-Gz2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="KtS-x3-qNP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50X-qy-Ine" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1269" y="1707"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Pqo-U6-KRD">
+            <objects>
+                <navigationController id="XlF-xs-nDF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xUc-tP-BVD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mbZ-Js-UFB" kind="relationship" relationship="rootViewController" id="pZv-3p-k0x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Kz-PN-Xcj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1269" y="875"/>
         </scene>
     </scenes>
     <resources>
