@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UUg-2s-cgM">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -111,13 +111,16 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Група" id="SGy-Ir-sVF" userLabel="Група">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="O2h-V6-5gf">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="j46-4I-N8B">
-                                <rect key="frame" x="-65" y="-15" width="87" height="33"/>
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="j46-4I-N8B">
+                                <rect key="frame" x="16" y="5.6666666666666679" width="87" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="1"/>
                                     <segment title="2"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeWeek:" destination="s1O-w9-C0n" eventType="valueChanged" id="7gK-Gj-z8P"/>
+                                </connections>
                             </segmentedControl>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="person.fill.questionmark" catalog="system" id="0dg-r4-JK8"/>
