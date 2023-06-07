@@ -16,18 +16,14 @@ class ScheduleController: UITableViewController {
     }
     
     @IBAction func changeWeek(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            scheduleWeek = firstWeekSchedule
-        case 1:
-            scheduleWeek = secondWeekSchedule
-        default:
-            scheduleWeek = firstWeekSchedule
-        }
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+    let selectedSchedule = sender.selectedSegmentIndex == 1 ? secondWeekSchedule : firstWeekSchedule
+    scheduleWeek = selectedSchedule
+    
+    DispatchQueue.main.async {
+        self.tableView.reloadData()
     }
+}
+
     
     
 
