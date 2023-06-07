@@ -1,8 +1,8 @@
 import Foundation
 
 protocol ScheduleManagerDelegate {
-    func didUpdate(_ scheduleManager: ScheduleManager, schedule: Schedule)
-    func didFail()
+    func didUpdate(_ scheduleManager: ScheduleManager, schedule: ScheduleData)
+    func didFail(error: Error)
 }
 
 struct ScheduleManager {
@@ -18,36 +18,30 @@ struct ScheduleManager {
     
     func performRequest(with scheduleURL: String) {
 
-        
         if let url = URL(string: scheduleURL) {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let error = error {
-                    print("Error getting schedule - \(error.localizedDescription)")
                     DispatchQueue.main.async {
-                        delegate?.didFail()
+                        delegate?.didFail(error: error)
                     }
                     return
                 }
-                if let safeData = data {
-                    if let schedule = self.parseJSON(safeData) {
-                        DispatchQueue.main.async {
-                            delegate?.didUpdate(self, schedule: schedule)
-                        }
-                    }
+                if let safeData = data, let schedule = self.parseJSON(safeData) {
+                    self.delegate?.didUpdate(self, schedule: schedule)
                 }
             }
             .resume()
         }
     }
     
-    func parseJSON(_ scheduleData: Data) -> Schedule? {
+    func parseJSON(_ scheduleData: Data) -> ScheduleData? {
         let decoder = JSONDecoder()
         
         do {
-            let decodedData = try decoder.decode(Schedule.self, from: scheduleData)
+            let decodedData = try decoder.decode(ScheduleData.self, from: scheduleData)
             return decodedData
         } catch {
-            delegate?.didFail()
+            delegate?.didFail(error: error)
             return nil
         }
     }
