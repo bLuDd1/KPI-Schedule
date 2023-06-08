@@ -6,12 +6,11 @@ protocol ScheduleManagerDelegate {
 }
 
 struct ScheduleManager {
-    let scheduleURL = "https://schedule.kpi.ua/api/schedule/lessons"
     var delegate: ScheduleManagerDelegate?
 
     
     func getSchedule(id: String) {
-        let urlString = "\(scheduleURL)?groupId=\(id)"
+        let scheduleURL = "https://schedule.kpi.ua/api/schedule/lessons?groupId=\(id)"
         if let safeUrlString = scheduleURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
             performRequest(with: safeUrlString)
         }
