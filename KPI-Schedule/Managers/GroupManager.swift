@@ -9,6 +9,7 @@ struct GroupListManager {
     let scheduleURL = "https://schedule.kpi.ua/api/schedule/groups"
     var delegate: GroupManagerDelegate?
     
+
     func getGroupList() {
         if let safeUrlString = scheduleURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
             performRequest(with: safeUrlString)
@@ -33,15 +34,18 @@ struct GroupListManager {
         }
     }
     
+
     func parseJSON(_ groupData: Data) -> GroupData? {
         let decoder = JSONDecoder()
-        
+     
         do {
             let decodedData = try decoder.decode(GroupData.self, from: groupData)
             return decodedData
         } catch {
+
             delegate?.didFail(error: error)
             return nil
+
         }
     }
 }
