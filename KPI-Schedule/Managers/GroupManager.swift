@@ -1,52 +1,51 @@
 import Foundation
 
 protocol GroupManagerDelegate {
-    func didFailWithGroup()
+    func didUpdate(_ groupListManager: GroupListManager, groupData: GroupData)
+    func didFail(error: Error)
 }
 
-struct GroupManager {
+struct GroupListManager {
+    let scheduleURL = "https://schedule.kpi.ua/api/schedule/groups"
     var delegate: GroupManagerDelegate?
     
-    func performRequest(group: String, completion: @escaping (GroupModel) -> ()) {
-        var components = URLComponents(string: "https://schedule.kpi.ua/api/schedule/groups")
-        // Set query parameters if needed
-        let queryItems = [
-            URLQueryItem(name: "param1", value: "value1"),
-            URLQueryItem(name: "param2", value: "value2")
-        ]
-        components?.queryItems = queryItems
-        
-        if let groupURL = components?.url {
-            URLSession.shared.dataTask(with: groupURL) { data, response, error in
-                if let error = error {
-                    self.delegate?.didFailWithGroup()
-                    return
-                }
-                if let safeData = data {
-                    if let group = self.parseJSON(data: safeData, group: group) {
-                        completion(group)
-                    } else {
-                        self.delegate?.didFailWithGroup()
-                    }
-                }
-            }
-            .resume()
+
+    func getGroupList() {
+        if let safeUrlString = scheduleURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            performRequest(with: safeUrlString)
         }
     }
     
-    private func parseJSON(data: Data, group: String) -> GroupModel? {
-        do {
-            let decodedData = try JSONDecoder().decode(GroupData.self, from: data)
-            for groupa in decodedData.data {
-                if groupa.name == group {
-                    return GroupModel(name: groupa.name, faculty: groupa.faculty, id: groupa.id)
+    func performRequest(with urlString: String) {
+        if let url = URL(string: urlString) {
+            let session = URLSession(configuration: .default)
+            
+            let task = session.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    self.delegate?.didFail(error: error)
+                    return
+                }
+                
+                if let safeData = data, let group = self.parseJSON(safeData) {
+                    self.delegate?.didUpdate(self, groupData: group)
                 }
             }
-        } catch {
-            DispatchQueue.main.async {
-                self.delegate?.didFailWithGroup()
-            }
+            task.resume()
         }
-        return nil
+    }
+    
+
+    func parseJSON(_ groupData: Data) -> GroupData? {
+        let decoder = JSONDecoder()
+     
+        do {
+            let decodedData = try decoder.decode(GroupData.self, from: groupData)
+            return decodedData
+        } catch {
+
+            delegate?.didFail(error: error)
+            return nil
+
+        }
     }
 }
