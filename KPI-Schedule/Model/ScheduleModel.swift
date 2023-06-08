@@ -5,12 +5,13 @@ struct ScheduleData: Decodable {
 }
 
 struct Schedule: Decodable {
+    var groupCode: String
     var scheduleFirstWeek: [Day]
     var scheduleSecondWeek: [Day]
 }
 
 struct Day: Decodable {
-    var day: String
+    var day: DayName
     var pair: [Pair]
 }
 

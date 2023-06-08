@@ -26,8 +26,93 @@ class ScheduleController: UITableViewController {
         self.tableView.reloadData()
         }
     }
+    
+    @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
+        navigationItem.title = defaults.string(forKey: "selectedGroupName") ?? "ІМ-01"
+        scheduleManager.getSchedule(id: defaults.string(forKey: "selectedGroupId") ?? defaultId)
+    }
+}
 
     
+
+extension ScheduleController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        daysWithPairs = []
+        for day in scheduleWeek {
+            if !day.pair.isEmpty {
+                daysWithPairs.append(day)
+            }
+        }
+
+        return daysWithPairs.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return daysWithPairs[section].pair.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PairCell", for: indexPath)
+        
+        var configuration = cell.defaultContentConfiguration()
+        let pair = daysWithPairs[indexPath.section].pair[indexPath.row]
+        let pairName = pair.type != "" ? "\(pair.name) (\(pair.type))" : pair.name
+        configuration.text = pairName
+        configuration.secondaryText = pair.time
+        configuration.secondaryTextProperties.color = .systemBlue
+        cell.contentConfiguration = configuration
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let pairs = daysWithPairs[indexPath.section].pair[indexPath.row]
+        
+        let alertTitle = pairs.type != "" ? "\(pairs.name) (\(pairs.type))" : pairs.name
+        lazy var alertMessage: String = {
+            if pairs.teacherName != "" {
+                if pairs.place != "" {
+                    return "\(pairs.teacherName)\n\(pairs.place)"
+                } else {
+                    return "\(pairs.teacherName)"
+                }
+            } else {
+                if pairs.place != "" {
+                    return "\(pairs.place)"
+                } else {
+                    return ""
+                }
+            }
+        }()
+        
+        let alert = UIAlertController(title: alertTitle,
+                                      message: alertMessage,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel))
+        present(alert, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if daysWithPairs[section].pair.isEmpty {
+            return nil
+        }
+        
+        switch daysWithPairs[section].day {
+        case .monday:
+            return NSLocalizedString("Monday", comment: "")
+        case .tuesday:
+            return NSLocalizedString("Tuesday", comment: "")
+        case .wednesday:
+            return NSLocalizedString("Wednesday", comment: "")
+        case .thursday:
+            return NSLocalizedString("Thursday", comment: "")
+        case .friday:
+            return NSLocalizedString("Friday", comment: "")
+        case .saturday:
+            return NSLocalizedString("Saturday", comment: "")
+        }
+    }
 }
 
 extension ScheduleController: ScheduleManagerDelegate {
